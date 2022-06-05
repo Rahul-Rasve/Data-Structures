@@ -132,25 +132,50 @@ void singlyLinkedList :: display(){
 
 int main()
 {
-    int n;
-
     singlyLinkedList s1;
+    int n, choice=0;
+
     for(int i=0; i<5; i++){
         cout<<"\nEnter No. : ";
         cin>>n;
         s1.insert(n);
     }
 
-    cout<<"\nEnter value to search : ";
-    cin>>n;
-    s1.remove(n);
-
-    s1.display();
-
-    cout<<"\nEnter value to search : ";
-    cin>>n;
-    s1.remove(n);
-    s1.display();
+    while(true){
+        cout<<"\n1) Insert"<<end
+            <<"2) Search"<<endl
+            <<"3) Delete"<<endl
+            <<"4) Display"<<endl
+            <<"5) Exit"<<endl;
+        cout<<"\nEnter Choice : ";
+        cin>>choice;
+        switch(choice){
+            case 1:
+                cout<<"\nEnter Number : ";
+                cin>>n;
+                s1.insert(n);
+                break;
+            case 2:
+                cout<<"\nEnter Number to Search : ";
+                cin>>n;
+                s1.search(n);
+                break;
+            case 3:
+                cout<<"\nEnter Number to Delete : ";
+                cin>>n;
+                s1.remove(n);
+                break;
+            case 4:
+                s1.display();
+                break;
+            case 5:
+                exit(0);
+                break;
+            default:
+                cout<<"\nInvalid Choice!"<<endl;
+                break;
+        }
+    }
     
     return 0;
 }
