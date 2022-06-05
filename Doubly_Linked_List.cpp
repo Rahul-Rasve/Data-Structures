@@ -156,21 +156,21 @@ int main()
             <<"3) Delete"<<endl
             <<"4) Display"<<endl
             <<"5) Exit"<<endl;
-        cout<<"Enter Choice : ";
+        cout<<"\nEnter Choice : ";
         cin>>choice;
         switch(choice){
             case 1:
-                cout<<"Enter Number : ";
+                cout<<"\nEnter Number : ";
                 cin>>n;
                 d1.insert(n);
                 break;
             case 2:
-                cout<<"Enter Number to Search : ";
+                cout<<"\nEnter Number to Search : ";
                 cin>>n;
                 d1.search(n);
                 break;
             case 3:
-                cout<<"Enter Number to Delete : ";
+                cout<<"\nEnter Number to Delete : ";
                 cin>>n;
                 d1.remove(n);
                 break;
