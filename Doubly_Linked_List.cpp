@@ -142,7 +142,7 @@ void doublyLinkedList :: display(){
 int main()
 {
     doublyLinkedList d1;
-    int n;
+    int n, dch=0, choice=0;
 
     for(int i=0; i<5; i++){
         cout<<"\nEnter No. : ";
@@ -150,18 +150,54 @@ int main()
         d1.insert(n);
     }
 
-
-    cout<<"\nEnter value to Delete : ";
-    cin>>n;
-    d1.remove(n);
-    
-    d1.display();
-
-    cout<<"\nEnter value to Delete : ";
-    cin>>n;
-    d1.remove(n);
-
-    d1.display();
+    while(true){
+        cout<<"\n1) Insert"<<endl
+            <<"2) Search"<<endl
+            <<"3) Delete"<<endl
+            <<"4) Display"<<endl
+            <<"5) Exit"<<endl;
+        cout<<"Enter Choice : ";
+        cin>>choice;
+        switch(choice){
+            case 1:
+                cout<<"Enter Number : ";
+                cin>>n;
+                d1.insert(n);
+                break;
+            case 2:
+                cout<<"Enter Number to Search : ";
+                cin>>n;
+                d1.search(n);
+                break;
+            case 3:
+                cout<<"Enter Number to Delete : ";
+                cin>>n;
+                d1.remove(n);
+                break;
+            case 4:
+                cout<<"\nHow to Display ->"<<endl
+                    <<"\t1) From Head"<<endl
+                    <<"\t2) From Tail"<<endl;
+                cout<<"Enter Choice : ";
+                cin>>dch;
+                if(dch == 1){
+                    d1.displayFromHead();
+                }
+                else if(dch == 2){
+                    d1.displayFromTail();
+                }
+                else{
+                    cout<<"\nInvalid Choice!"<<endl;
+                }
+                break;
+            case 5:
+                exit(0);
+                break;
+            default:
+                cout<<"\nInvalid Choice!"<<endl;
+                break;
+        }
+    }
 
     return 0;
 }
